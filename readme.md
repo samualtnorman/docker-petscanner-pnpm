@@ -34,7 +34,7 @@ For further help, feel free to [open an issue](https://github.com/samualtnorman/
 ## About
 This image is based on the slim variant of the [debian Docker Official Image](https://hub.docker.com/_/debian). The
 `:latest` tag is normally the one in use in production for [PetScanner's Web App](
-https://petscanner.com/app/register-or-login).
+https://petscanner.com/app).
 
 ## How To Build (Linux Only)
 1. Clone this repository `git clone https://github.com/samualtnorman/docker-petscanner-pnpm.git`
