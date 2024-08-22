@@ -1,1 +1,5 @@
+.dockerignore
+Dockerfile
+compose.yml
+readme.md
 node_modules
