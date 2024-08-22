@@ -28,6 +28,8 @@ When
 version of pnpm and Node.js you can specify like so `FROM petscanner/pnpm:9.7.1-node22.6.0`. [The full list of available
 versions is on Docker Hub.](https://hub.docker.com/r/petscanner/pnpm/tags?ordering=name)
 
+[View an example project using this image as a base.](./example)
+
 For further help, feel free to [open an issue](https://github.com/samualtnorman/docker-petscanner-pnpm/issues/new) or
 [start a discussion](https://github.com/samualtnorman/docker-petscanner-pnpm/discussions/new/choose).
 
