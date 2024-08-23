@@ -13,8 +13,8 @@ services:
       context: .
 
       args:
-        PNPM_VERSION: 9.8.0
-        NODE_VERSION: 22.7.0
+        pnpm_version: 9.8.0
+        node_version: 22.7.0
 
     ports:
       - 13229:80

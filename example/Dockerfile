@@ -2,9 +2,9 @@
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 
-ARG PNPM_VERSION
-ARG NODE_VERSION
-FROM petscanner/pnpm:${PNPM_VERSION}-node${NODE_VERSION}
+ARG pnpm_version
+ARG node_version
+FROM petscanner/pnpm:${pnpm_version}-node${node_version}
 WORKDIR /opt/example
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
