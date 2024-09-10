@@ -6,4 +6,4 @@ new Server((request, response) => {
 	response.end("Hello, world!")
 }).listen(80)
 
-process.on(`SIGTERM`, () => process.exit())
+process.on("SIGTERM", () => process.exit())
