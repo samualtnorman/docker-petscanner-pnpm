@@ -1,4 +1,4 @@
-FROM debian:12.6-slim as install
+FROM debian:12.8-slim as install
 RUN apt-get update\
  && apt-get install --yes wget=1.21.3-1+b2 ca-certificates=20230311 --no-install-recommends\
  && apt-get clean\
@@ -13,7 +13,7 @@ RUN pnpm env use --global $nodeVersion
 ARG pnpmVersion
 RUN pnpm add --global pnpm@$pnpmVersion && pnpm --version
 
-FROM debian:12.6-slim
+FROM debian:12.8-slim
 ENV PNPM_HOME=/root/.local/share/pnpm
 ENV PATH=$PATH:$PNPM_HOME
 COPY --from=install $PNPM_HOME $PNPM_HOME
