@@ -1,4 +1,4 @@
-FROM debian:12.8-slim as install
+FROM debian:12.8-slim AS install
 RUN apt-get update\
  && apt-get install --yes wget=1.21.3-1+b2 ca-certificates=20230311 --no-install-recommends\
  && apt-get clean\
