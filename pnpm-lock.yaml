@@ -1,0 +1,37 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@std/semver':
+        specifier: jsr:^1.0.6
+        version: '@jsr/std__semver@1.0.6'
+      '@types/node':
+        specifier: ~22.6.2
+        version: 22.6.2
+
+packages:
+
+  '@jsr/std__semver@1.0.6':
+    resolution: {integrity: sha512-MXgSPv8WEB7ygO32CHPi4Yg6CoywGdi+aRlgBU9heWdyhASrpJwn+RMuKxOyWxCg5qYQz+oApbqm8CblnT+l5Q==, tarball: https://npm.jsr.io/~/11/@jsr/std__semver/1.0.6.tgz}
+
+  '@types/node@22.6.2':
+    resolution: {integrity: sha512-roF5SJIJFOiDNf+vO6h/a0Y02/U4wJ7KwgDNrBdkBGUstvOkct7JQaSkF16jXn/UsAhvNeLEXqyuN6EUvg6+xw==}
+
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
+snapshots:
+
+  '@jsr/std__semver@1.0.6': {}
+
+  '@types/node@22.6.2':
+    dependencies:
+      undici-types: 6.19.8
+
+  undici-types@6.19.8: {}
