@@ -1,6 +1,6 @@
 #!/usr/bin/env -S node --experimental-strip-types
 import * as Semver from "@std/semver"
-import ChildProcess from "child_process"
+import ChildProcess, { spawnSync } from "child_process"
 import { writeFileSync } from "fs"
 import { promisify } from "util"
 import state from "../state.json" with { type: "json" }
@@ -23,3 +23,6 @@ await Promise.all(state.map(async state => {
 }))
 
 writeFileSync(`state.json`, `${JSON.stringify(state, undefined, `\t`)}\n`)
+spawnSync(`git`, [ `add`, `state.json` ], { stdio: `inherit` })
+spawnSync(`git`, [ `commit`, `-m`, `update to Node.js v${nodeVersion}` ])
+spawnSync(`git`, [ `push` ])
