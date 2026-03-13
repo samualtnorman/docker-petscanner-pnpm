@@ -8,6 +8,7 @@
 		"@std/semver": "jsr:^1.0.6",
 		"@types/node": "~22.6.2",
 		"try": "^1.0.3",
+		"typescript": "^5.9.3",
 		"valibot": "^1.2.0"
 	}
 }

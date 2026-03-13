@@ -17,6 +17,9 @@ importers:
       try:
         specifier: ^1.0.3
         version: 1.0.3
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
       valibot:
         specifier: ^1.2.0
         version: 1.2.0(typescript@5.9.3)
@@ -58,8 +61,7 @@ snapshots:
 
   try@1.0.3: {}
 
-  typescript@5.9.3:
-    optional: true
+  typescript@5.9.3: {}
 
   undici-types@6.19.8: {}
 
