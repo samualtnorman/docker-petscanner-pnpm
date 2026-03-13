@@ -14,6 +14,12 @@ importers:
       '@types/node':
         specifier: ~22.6.2
         version: 22.6.2
+      try:
+        specifier: ^1.0.3
+        version: 1.0.3
+      valibot:
+        specifier: ^1.2.0
+        version: 1.2.0(typescript@5.9.3)
 
 packages:
 
@@ -23,8 +29,24 @@ packages:
   '@types/node@22.6.2':
     resolution: {integrity: sha512-roF5SJIJFOiDNf+vO6h/a0Y02/U4wJ7KwgDNrBdkBGUstvOkct7JQaSkF16jXn/UsAhvNeLEXqyuN6EUvg6+xw==}
 
+  try@1.0.3:
+    resolution: {integrity: sha512-AHA8khVCII6zKyRkyPo6pRwoR9v5jb7QFw6e5avtaVSkxVfaEucYIo06xnwB+pJaEarfYNbs7W3Vq+LZLZiWyA==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
 snapshots:
 
@@ -34,4 +56,13 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
+  try@1.0.3: {}
+
+  typescript@5.9.3:
+    optional: true
+
   undici-types@6.19.8: {}
+
+  valibot@1.2.0(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3

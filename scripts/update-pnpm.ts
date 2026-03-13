@@ -1,28 +1,29 @@
 #!/usr/bin/env -S node --experimental-strip-types
 import * as Semver from "@std/semver"
-import ChildProcess, { spawnSync } from "child_process"
 import { writeFileSync } from "fs"
-import { promisify } from "util"
+import { cmd, cmdSync } from "../common.ts"
 import state from "../state.json" with { type: "json" }
 
-const execFile = promisify(ChildProcess.execFile)
 const [ ,, pnpmVersion ] = process.argv
+
+if (!pnpmVersion) {
+	process.stderr.write(`Expected 1 argument`)
+	process.exit(1)
+}
+
 const pnpmSemverVersion = Semver.parse(pnpmVersion)
 
 await Promise.all(state.map(async state => {
 	if (pnpmSemverVersion.major != Semver.parse(state.pnpmVersion).major)
 		return
 
-	let { stdout, stderr } = await execFile(`./build.sh`, [ pnpmVersion, state.nodeVersion ])
-	process.stdout.write(stdout)
-	process.stderr.write(stderr);
-	({ stdout, stderr } = await execFile(`docker`, [ `push`, `petscanner/pnpm:${pnpmVersion}-node${state.nodeVersion}` ]))
-	process.stdout.write(stdout)
-	process.stderr.write(stderr)
+	await cmd(`./build.sh`, pnpmVersion, state.nodeVersion)
+	await cmd(`docker`, `push`, `petscanner/pnpm:${pnpmVersion}-node${state.nodeVersion}`)
 	state.pnpmVersion = pnpmVersion
 }))
 
+console.log(`Updating state.json`)
 writeFileSync(`state.json`, `${JSON.stringify(state, undefined, `\t`)}\n`)
-spawnSync(`git`, [ `add`, `state.json` ], { stdio: `inherit` })
-spawnSync(`git`, [ `commit`, `-m`, `update to pnpm v${pnpmVersion}` ])
-spawnSync(`git`, [ `push` ])
+cmdSync(`git`, `add`, `state.json`)
+cmdSync(`git`, `commit`, `-m`, `update to pnpm v${pnpmVersion}`)
+cmdSync(`git`, `push`)
