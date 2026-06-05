@@ -1,3 +1,6 @@
+This repository has moved to [Codeberg](https://codeberg.org/Samual/docker-pnpm).
+
+---
 # PetScanner's pnpm Docker Image
 [View the Docker Hub page.](https://hub.docker.com/r/petscanner/pnpm)
 
